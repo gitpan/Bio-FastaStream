@@ -11,7 +11,7 @@ our @ISA         = qw(Exporter);
 our %EXPORT_TAGS = ();
 our @EXPORT_OK   = ();
 our @EXPORT      = qw();
-our $VERSION     = '0.01';
+our $VERSION     = '0.02';
 our $errstr;
 
 
@@ -379,10 +379,7 @@ Bio::FastaStream - Perl extension for Bioinformatics. Parsing sequence informati
 =head1 SYNOPSIS
 
   use Bio::FastaStream;
-  my $fasta = qq~>sp|P01815|HV2B_HUMAN Ig heavy chain V-II region COR - Homo sapiens (Human).
-QVTLRESGPALVKPTQTLTLTCTFSGFSLSSTGMCVGWIRQPPGKGLEWLARIDWDDDKY
-YNTSLETRLTISKDTSRNQVVLTMDPVDTATYYCARITVIPAPAGYMDVWGRGTPVTVSS
-  ~;
+  my $fasta = '/path/to/file.fasta';
   my $seq = Bio::FastaStream->new($fasta);
 
 =head1 ABSTRACT
