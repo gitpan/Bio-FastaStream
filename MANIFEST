@@ -1,0 +1,7 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Bio-FastaStream.t
+lib/Bio/FastaStream.pm
+META.yml                                 Module meta-data (added by MakeMaker)
