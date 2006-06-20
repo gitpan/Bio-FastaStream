@@ -5,8 +5,8 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME              => 'Bio::FastaStream',
     VERSION_FROM      => 'lib/Bio/FastaStream.pm', # finds $VERSION
-    PREREQ_PM         => {FileHandler => 0}, # e.g., Module::Name => 1.1
+    PREREQ_PM         => {}, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Bio/FastaStream.pm', # retrieve abstract from module
-       AUTHOR         => 'Renee Baecker <reneeb@suse.de>') : ()),
+       AUTHOR         => 'Renee Baecker <module@renee-baecker.de>') : ()),
 );

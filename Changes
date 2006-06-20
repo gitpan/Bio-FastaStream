@@ -1,6 +1,6 @@
 Revision history for Perl extension Bio::FastaStream.
 
-0.01  Mon Jan 10 10:49:53 2005
+0.01  Tue Jun 20 12:54:50 2006
 	- original version; created by h2xs 1.23 with options
-		-XA -b 5.6.1 -n Bio::FastaStream
+		-b 5.6.1 -XA -n Bio::FastaStream
 

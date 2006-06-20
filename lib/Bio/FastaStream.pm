@@ -5,13 +5,7 @@ use strict;
 use warnings;
 use FileHandle;
 
-require Exporter;
-
-our @ISA         = qw(Exporter);
-our %EXPORT_TAGS = ();
-our @EXPORT_OK   = ();
-our @EXPORT      = qw();
-our $VERSION     = '0.02';
+our $VERSION     = '0.03';
 our $errstr;
 
 
@@ -20,7 +14,7 @@ sub file{
   my ($self,$file) = @_;
   unless($file && -e $file){
     $errstr = qq~$file does not exist~;
-    return undef;
+    return;
   }
   $self->{FILEHANDLE} = new FileHandle;
   open($self->{FILEHANDLE},"<$file") if($file);
@@ -32,7 +26,7 @@ sub new{
   my $self = {};
   unless($filename && -e $filename){
     $errstr = qq~$filename does not exist~;
-    return undef;
+    return;
   }
   $self->{FILEHANDLE} = new FileHandle;
   open($self->{FILEHANDLE},"<$filename") if($filename);
@@ -44,15 +38,22 @@ sub nextSeq{
   my ($self) = @_;
   local $/ = "\n>";
   my $fh = $self->{FILEHANDLE};
-  my $entry = <$fh>;
-  unless($entry){
-    close $fh;
-    return undef;
+  unless(fileno($fh)){
+    return;
   }
-  chomp($entry);
-  $entry = '>'.$entry unless($entry =~ /^>/);
-  newSequence($self,$entry);
-  return $self;
+  else{
+    my $entry = <$fh>;
+    unless($entry){
+      close $fh;
+      return;
+    }
+  
+    chomp($entry);
+    $entry = '>'.$entry unless($entry =~ /^>/);
+    newSequence($self,$entry);
+    return $self;
+  }
+  return;
 }# end nextSeq
 
 sub newSequence{
@@ -65,7 +66,7 @@ sub newSequence{
   my $sequencer;
   if($string_text && !_is_fasta($string_text)){
     $errstr = "Object doesn't contain fasta-sequence";
-    return undef;
+    return;
   }
   if($string_text){
     $string_text =~ s/^(\r?\n)+//;

@@ -1,14 +1,16 @@
 Bio-FastaStream version 0.01
 ============================
 
-This module aims to simplify the work with fasta-sequences. It parses
-the information out off a given sequence such as :
+The README is used to introduce the module and provide instructions on
+how to install the module, any machine dependencies it may have (for
+example C compilers and installed libraries) and any other information
+that should be provided before the module is installed.
 
-* Sequencelength
-* Sequence
-* Description
-* CRC64 checksum (same as Swiss-Prot uses)
-* References to other databases
+A README file is required for CPAN modules since CPAN extracts the
+README file from a module distribution so that people browsing the
+archive can use it get an idea of the modules uses. It is usually a
+good idea to provide version information here so that people can
+decide whether fixes for the module are worth downloading.
 
 INSTALLATION
 
@@ -21,13 +23,18 @@ To install this module type the following:
 
 DEPENDENCIES
 
-This module does not require other modules or libraries:
+This module requires these other modules and libraries:
+
+  blah blah blah
 
 COPYRIGHT AND LICENCE
 
 Put the correct copyright and licence information here.
 
-Copyright (C) 2004 Renee Baecker
+Copyright (C) 2006 by Renee Baecker
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+it under the same terms as Perl itself, either Perl version 5.8.6 or,
+at your option, any later version of Perl 5 you may have available.
+
+
